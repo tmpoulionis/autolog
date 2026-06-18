@@ -62,9 +62,11 @@ export function Composer({ mode, onModeChange, onSubmit, disabled }: ComposerPro
       />
       <div className="flex items-center justify-between gap-2">
         <ToggleGroup
-          type="single"
-          value={mode}
-          onValueChange={(v) => v && onModeChange(v as ComposerMode)}
+          value={[mode]}
+          onValueChange={(v) => {
+            const next = v[v.length - 1] as ComposerMode | undefined
+            if (next) onModeChange(next)
+          }}
           variant="outline"
           size="sm"
         >

@@ -57,10 +57,12 @@ export const LogEntryCard = React.forwardRef<HTMLDivElement, LogEntryCardProps>(
             <h3 className="text-sm font-semibold leading-snug text-balance">{entry.title}</h3>
           </div>
           <DropdownMenu>
-            <DropdownMenuTrigger asChild>
-              <Button variant="ghost" size="icon" className="size-7 shrink-0" aria-label="Entry options">
-                <MoreHorizontal className="size-4" />
-              </Button>
+            <DropdownMenuTrigger
+              render={
+                <Button variant="ghost" size="icon" className="size-7 shrink-0" aria-label="Entry options" />
+              }
+            >
+              <MoreHorizontal className="size-4" />
             </DropdownMenuTrigger>
             <DropdownMenuContent align="end">
               <DropdownMenuGroup>

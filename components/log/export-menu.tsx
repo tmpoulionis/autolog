@@ -41,11 +41,11 @@ export function ExportMenu({ project, entries }: ExportMenuProps) {
 
   return (
     <DropdownMenu>
-      <DropdownMenuTrigger asChild>
-        <Button variant="outline" size="sm" disabled={disabled}>
-          <Download data-icon="inline-start" />
-          Export
-        </Button>
+      <DropdownMenuTrigger
+        render={<Button variant="outline" size="sm" disabled={disabled} />}
+      >
+        <Download data-icon="inline-start" />
+        Export
       </DropdownMenuTrigger>
       <DropdownMenuContent align="end">
         <DropdownMenuLabel>Download log</DropdownMenuLabel>

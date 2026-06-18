@@ -50,10 +50,10 @@ export function AutoLogApp() {
         <header className="border-border flex items-center justify-between gap-2 border-b px-3 py-2">
           <div className="flex min-w-0 items-center gap-2">
             <Sheet open={sidebarOpen} onOpenChange={setSidebarOpen}>
-              <SheetTrigger asChild>
-                <Button variant="ghost" size="icon" className="md:hidden" aria-label="Open projects">
-                  <Menu data-icon />
-                </Button>
+              <SheetTrigger
+                render={<Button variant="ghost" size="icon" className="md:hidden" aria-label="Open projects" />}
+              >
+                <Menu data-icon />
               </SheetTrigger>
               <SheetContent side="left" className="w-72 p-0">
                 <SheetTitle className="sr-only">Projects</SheetTitle>
@@ -67,11 +67,9 @@ export function AutoLogApp() {
 
           {/* Open log panel on small screens */}
           <Sheet open={panelOpen} onOpenChange={setPanelOpen}>
-            <SheetTrigger asChild>
-              <Button variant="outline" size="sm" className="lg:hidden">
-                <NotebookText data-icon="inline-start" />
-                Log
-              </Button>
+            <SheetTrigger render={<Button variant="outline" size="sm" className="lg:hidden" />}>
+              <NotebookText data-icon="inline-start" />
+              Log
             </SheetTrigger>
             <SheetContent side="right" className="w-full p-0 sm:max-w-md">
               <SheetTitle className="sr-only">Project log and tasks</SheetTitle>
